@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	$('input[type=button]').click(function() {
+		var $results = $('ul').empty();
+		$.getJSON('http://localhost:3333/api/google?s=' + encodeURI(this.value), function(data) {
+			$(data.html).find('h3.r > a').each(function(idx, elt) {
+				$('<li>').text($(elt).text()).appendTo($results);
+			});
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+
+<section>
+	Search arg:
+	<input type="text" />
+	<input type="button" value="Go" />
+</section>
+
+<fieldset>
+	<legend>Search Results</legend>
+	<ul></ul>
+</fieldset>
+
+</body>
+
+</html>
