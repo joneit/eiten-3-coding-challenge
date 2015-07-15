@@ -1,5 +1,4 @@
-# iHeartEiten
-iHeart Radio challenge
+# \[i.R.\] challenge
 
 This challenge was to write a screen-scaper in node.js on the server side and a
 simple page on the client side that accepts a search arg, calls the endpoint,
